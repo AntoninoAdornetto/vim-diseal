@@ -23,6 +23,13 @@ return require('packer').startup(function(use)
 	use('tpope/vim-commentary') -- gcc comments
 
 	use {
+		"windwp/nvim-autopairs",
+		config = function() require("nvim-autopairs").setup {} end
+	}
+
+	-- use({ "prettier/vim-prettier", run = "npm install" })
+
+	use {
 		'VonHeikemen/lsp-zero.nvim',
 		branch = 'v2.x',
 		requires = {
@@ -40,6 +47,10 @@ return require('packer').startup(function(use)
 		{'hrsh7th/nvim-cmp'},     -- Required
 		{'hrsh7th/cmp-nvim-lsp'}, -- Required
 		{'L3MON4D3/LuaSnip'},     -- Required
+
+				  -- prettier format
+		{'jose-elias-alvarez/null-ls.nvim'},
+		{'MunifTanjim/prettier.nvim'},
 	}
 }
 end)
