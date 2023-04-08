@@ -4,7 +4,7 @@ vim.api.nvim_command([[
 
 require('toggleterm').setup{
   size = 15,
-  open_mapping = [[<leader>t]],
+	open_mapping = [[<c-\>]],
   hide_numbers = true,
   shade_filetypes = {},
   shade_terminals = true,
@@ -15,6 +15,5 @@ require('toggleterm').setup{
   direction = 'horizontal',
 }
 
-vim.api.nvim_set_keymap('n', '<leader>t', ':ToggleTerm<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('t', '<leader>t', '<C-\\><C-n>:ToggleTerm<CR>', { noremap = true, silent = true })
-
+vim.api.nvim_set_keymap('n', '<C-\\><C-\\>', ':ToggleTermOpenAll<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-\\><C-n>', ':ToggleTermCloseAll<CR>', { noremap = true, silent = true })
