@@ -27,6 +27,10 @@ return require('packer').startup(function(use)
 		config = function() require("nvim-autopairs").setup {} end
 	}
 
+	use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+		require("toggleterm").setup()
+	end}
+
 	-- use({ "prettier/vim-prettier", run = "npm install" })
 
 	use {
