@@ -10,6 +10,7 @@
 
 ```sh
 git clone https://github.com/AntoninoAdornetto/vim-diseal.git ~/.config/nvim
+```
 
 To use this configuration, you'll need to have Neovim installed on your system. You can clone this repository and copy the files to your `~/.config/nvim` directory. Alternatively, you can use a plugin manager like [vim-plug](https://github.com/junegunn/vim-plug) or [packer.nvim](https://github.com/wbthomason/packer.nvim) to manage your plugins and configuration files.
 
