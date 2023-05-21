@@ -6,7 +6,19 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
 	-- Packer can manage itself
 	use 'wbthomason/packer.nvim'
+
+	-- themes
 	use 'Mofiqul/vscode.nvim'
+	use 'Mofiqul/dracula.nvim'
+	use 'ellisonleao/gruvbox.nvim'
+	use 'shaunsingh/nord.nvim'
+
+	-- debugger
+	use 'mfussenegger/nvim-dap'
+
+
+	-- java
+	use 'mfussenegger/nvim-jdtls'
 
 	use {
 		'nvim-telescope/telescope.nvim', tag = '0.1.1',
@@ -30,7 +42,10 @@ return require('packer').startup(function(use)
 		require("toggleterm").setup()
 	end}
 
-	-- use({ "prettier/vim-prettier", run = "npm install" })
+	use {
+		'nvim-lualine/lualine.nvim',
+		requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+	}
 
 	use {
 		'VonHeikemen/lsp-zero.nvim',
