@@ -1,12 +1,29 @@
 local lsp = require("lsp-zero")
 local lspconfig = require('lspconfig')
+local util = require "lspconfig/util"
+
 lspconfig.clangd.setup{}
+
+lspconfig.gopls.setup{
+	cmd = {"gopls"},
+	filetypes = {"go", "gomod", "gowork", "gotmpl"},
+	root_dir = util.root_pattern("go.work", "go.mod", ".git"),
+	settings = {
+		gopls = {
+			completeUnimported = true,
+			usePlaceholders = true,
+			analyses = {
+				unusedparams = true,
+			}
+		}
+	}
+}
 
 lsp.preset("recommended")
 
 lsp.ensure_installed({
   'tsserver',
-  'gopls',
+	'gopls',
 	'clangd'
 })
 

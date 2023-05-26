@@ -13,8 +13,9 @@ return require('packer').startup(function(use)
 	use 'ellisonleao/gruvbox.nvim'
 	use 'shaunsingh/nord.nvim'
 
-	-- debugger
+	-- debuggers
 	use 'mfussenegger/nvim-dap'
+	use 'leoluz/nvim-dap-go'
 
 
 	-- java
