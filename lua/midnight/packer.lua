@@ -17,6 +17,8 @@ return require('packer').startup(function(use)
 	use 'mfussenegger/nvim-dap'
 	use 'leoluz/nvim-dap-go'
 
+	-- testing
+	use 'vim-test/vim-test'
 
 	-- java
 	use 'mfussenegger/nvim-jdtls'
@@ -48,6 +50,7 @@ return require('packer').startup(function(use)
 		requires = { 'nvim-tree/nvim-web-devicons', opt = true }
 	}
 
+	-- lsp
 	use {
 		'VonHeikemen/lsp-zero.nvim',
 		branch = 'v2.x',
