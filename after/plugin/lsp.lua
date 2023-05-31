@@ -2,7 +2,10 @@ local lsp = require("lsp-zero")
 local lspconfig = require('lspconfig')
 local util = require "lspconfig/util"
 
-lspconfig.clangd.setup{}
+lspconfig.clangd.setup{
+	cmd = {"clangd"},
+	filetypes = {"c", "cpp"}
+}
 
 lspconfig.gopls.setup{
 	cmd = {"gopls"},
