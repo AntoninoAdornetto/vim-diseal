@@ -14,8 +14,33 @@ return require('packer').startup(function(use)
 	use 'shaunsingh/nord.nvim'
 
 	-- debuggers
-	use 'mfussenegger/nvim-dap'
-	use 'leoluz/nvim-dap-go'
+	use {
+		'mfussenegger/nvim-dap',
+	}
+
+	use {
+		'leoluz/nvim-dap-go',
+		ft = "go",
+		dependencies = "mfussenegger/nvim-dap",
+		config = function(_, opts)
+			require("dap-go").setup({
+				plugin = true,
+				n = {
+					["<leader>dgt"] = {
+						function()
+							require('dap-go').debug_test()
+						end,
+						"debug go test"
+					},
+					["<leader>dgl"] = {
+						function()
+							require('dap-go').debug_last()
+						end,
+					}
+				}
+			})
+		end
+	}
 
 	-- testing
 	use 'vim-test/vim-test'
@@ -49,6 +74,12 @@ return require('packer').startup(function(use)
 		'nvim-lualine/lualine.nvim',
 		requires = { 'nvim-tree/nvim-web-devicons', opt = true }
 	}
+
+	-- will use later. netrw still OP imo
+	-- use({
+	-- 	"kyazdani42/nvim-tree.lua",
+	-- 	requires = "kyazdani42/nvim-web-devicons",
+	-- })
 
 	-- lsp
 	use {
