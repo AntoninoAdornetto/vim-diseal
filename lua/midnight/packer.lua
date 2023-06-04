@@ -14,33 +14,10 @@ return require('packer').startup(function(use)
 	use 'shaunsingh/nord.nvim'
 
 	-- debuggers
-	use {
-		'mfussenegger/nvim-dap',
-	}
-
-	use {
-		'leoluz/nvim-dap-go',
-		ft = "go",
-		dependencies = "mfussenegger/nvim-dap",
-		config = function(_, opts)
-			require("dap-go").setup({
-				plugin = true,
-				n = {
-					["<leader>dgt"] = {
-						function()
-							require('dap-go').debug_test()
-						end,
-						"debug go test"
-					},
-					["<leader>dgl"] = {
-						function()
-							require('dap-go').debug_last()
-						end,
-					}
-				}
-			})
-		end
-	}
+	use 'mfussenegger/nvim-dap'
+	use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+	use 'leoluz/nvim-dap-go'
+	use 'theHamsta/nvim-dap-virtual-text' 
 
 	-- testing
 	use 'vim-test/vim-test'
