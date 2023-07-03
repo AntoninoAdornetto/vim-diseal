@@ -33,7 +33,7 @@ return require('packer').startup(function(use)
 
 
 	use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
-	use('theprimeagen/harpoon')
+	-- use('theprimeagen/harpoon')
 	use('mbbill/undotree')
 	use('tpope/vim-fugitive') -- git
 	use('tpope/vim-commentary') -- gcc comments
@@ -55,10 +55,10 @@ return require('packer').startup(function(use)
 	}
 
 	-- will use later. netrw still OP imo
-	-- use({
-	-- 	"kyazdani42/nvim-tree.lua",
-	-- 	requires = "kyazdani42/nvim-web-devicons",
-	-- })
+	use({
+		"kyazdani42/nvim-tree.lua",
+		requires = "kyazdani42/nvim-web-devicons",
+	})
 
 	-- lsp
 	use {
