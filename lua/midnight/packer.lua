@@ -49,6 +49,8 @@ return require('packer').startup(function(use)
 		require("toggleterm").setup()
 	end}
 
+	use 'nvim-tree/nvim-web-devicons'
+
 	use {
 		'nvim-lualine/lualine.nvim',
 		requires = { 'nvim-tree/nvim-web-devicons', opt = true }
