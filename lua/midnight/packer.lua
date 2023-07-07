@@ -7,17 +7,33 @@ return require('packer').startup(function(use)
 	-- Packer can manage itself
 	use 'wbthomason/packer.nvim'
 
+	-- themes
+	use 'Mofiqul/vscode.nvim'
+	use 'Mofiqul/dracula.nvim'
+	use 'ellisonleao/gruvbox.nvim'
+	use 'shaunsingh/nord.nvim'
+
+	-- debuggers
+	use 'mfussenegger/nvim-dap'
+	use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+	use 'leoluz/nvim-dap-go'
+	use 'theHamsta/nvim-dap-virtual-text' 
+
+	-- testing
+	use 'vim-test/vim-test'
+
+	-- java
+	use 'mfussenegger/nvim-jdtls'
+
 	use {
 		'nvim-telescope/telescope.nvim', tag = '0.1.1',
 		-- or                            , branch = '0.1.x',
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
 
-	use({ 'rose-pine/neovim', as = 'rose-pine' })
-	vim.cmd('colorscheme rose-pine')
 
 	use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
-	use('theprimeagen/harpoon')
+	-- use('theprimeagen/harpoon')
 	use('mbbill/undotree')
 	use('tpope/vim-fugitive') -- git
 	use('tpope/vim-commentary') -- gcc comments
@@ -27,12 +43,26 @@ return require('packer').startup(function(use)
 		config = function() require("nvim-autopairs").setup {} end
 	}
 
+	use 'windwp/nvim-ts-autotag'
+
 	use {"akinsho/toggleterm.nvim", tag = '*', config = function()
 		require("toggleterm").setup()
 	end}
 
-	-- use({ "prettier/vim-prettier", run = "npm install" })
+	use 'nvim-tree/nvim-web-devicons'
 
+	use {
+		'nvim-lualine/lualine.nvim',
+		requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+	}
+
+	-- will use later. netrw still OP imo
+	use({
+		"kyazdani42/nvim-tree.lua",
+		requires = "kyazdani42/nvim-web-devicons",
+	})
+
+	-- lsp
 	use {
 		'VonHeikemen/lsp-zero.nvim',
 		branch = 'v2.x',

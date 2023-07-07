@@ -1,27 +1,32 @@
 local lsp = require("lsp-zero")
 local lspconfig = require('lspconfig')
-
-local clangd_path = "/usr/bin/clangd"
+local util = require "lspconfig/util"
 
 lspconfig.clangd.setup{
-    cmd = { clangd_path },
-    filetypes = { "c" },
-    init_options = {
-        clangdFileStatus = true,
-        completion = {
-            clangdSnippetCapable = true,
-            completionChunkParsing = "regex",
-            crossFile = true,
-            usePlaceholders = true,
-        },
-    },
+	cmd = {"clangd"},
+	filetypes = {"c", "cpp"}
+}
+
+lspconfig.gopls.setup{
+	cmd = {"gopls"},
+	filetypes = {"go", "gomod", "gowork", "gotmpl"},
+	root_dir = util.root_pattern("go.work", "go.mod", ".git"),
+	settings = {
+		gopls = {
+			completeUnimported = true,
+			analyses = {
+				unusedparams = true,
+			}
+		}
+	}
 }
 
 lsp.preset("recommended")
 
 lsp.ensure_installed({
   'tsserver',
-  'gopls'
+	'gopls',
+	'clangd'
 })
 
 
