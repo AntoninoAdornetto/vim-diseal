@@ -12,6 +12,7 @@ return require('packer').startup(function(use)
 	use 'Mofiqul/dracula.nvim'
 	use 'ellisonleao/gruvbox.nvim'
 	use 'shaunsingh/nord.nvim'
+	use { "catppuccin/nvim", as = "catppuccin" }
 
 	-- debuggers
 	use 'mfussenegger/nvim-dap'
