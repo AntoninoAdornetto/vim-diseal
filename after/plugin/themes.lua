@@ -7,11 +7,13 @@
 
 vim.g.nord_contrast = false 
 vim.g.nord_borders = false
-vim.g.nord_disable_background = true 
+vim.g.nord_disable_background = false 
 vim.g.nord_italic = false
 vim.g.nord_uniform_diff_background = false 
 vim.g.nord_bold = true 
 vim.cmd[[colorscheme nord]]
+
+-- require('nord').set()
 
 -- vs bunk theme
 -- vim.o.background = 'dark'
@@ -32,3 +34,5 @@ vim.cmd[[colorscheme nord]]
 --     }
 -- })
 -- require('vscode').load()
+--
+-- vim.cmd.colorscheme "catppuccin"
