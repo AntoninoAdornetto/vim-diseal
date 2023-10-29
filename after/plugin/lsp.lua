@@ -4,7 +4,12 @@ local util = require "lspconfig/util"
 
 lspconfig.clangd.setup{
 	cmd = {"clangd"},
-	filetypes = {"c", "cpp"}
+	filetypes = {"c", "cpp"},
+	settings = {
+		clangd = {
+			compileFlags = {"-std=c++17"}
+		}
+	}
 }
 
 lspconfig.gopls.setup{
