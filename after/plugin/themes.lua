@@ -4,14 +4,16 @@
 
 -- vim.o.background = "dark" 
 -- vim.cmd([[colorscheme gruvbox]])
+--
+vim.cmd([[colorscheme carbonfox]])
 
-vim.g.nord_contrast = false 
-vim.g.nord_borders = false
-vim.g.nord_disable_background = false 
-vim.g.nord_italic = false
-vim.g.nord_uniform_diff_background = false 
-vim.g.nord_bold = true 
-vim.cmd[[colorscheme nord]]
+-- vim.g.nord_contrast = false 
+-- vim.g.nord_borders = false
+-- vim.g.nord_disable_background = false 
+-- vim.g.nord_italic = false
+-- vim.g.nord_uniform_diff_background = false 
+-- vim.g.nord_bold = true 
+-- vim.cmd[[colorscheme nord]]
 
 -- require('nord').set()
 
