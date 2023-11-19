@@ -1,40 +1,17 @@
--- vim.o.background = 'dark'
--- vim.cmd[[colorscheme dracula]]
--- vim.cmd[[colorscheme dracula-soft]]
+require('nightfox').setup({
+	options = {
+		transparent = true,
+		styles = {
+			keywords = "bold"
+		}
+	}
+})
 
--- vim.o.background = "dark" 
--- vim.cmd([[colorscheme gruvbox]])
---
 vim.cmd([[colorscheme carbonfox]])
 
--- vim.g.nord_contrast = false 
--- vim.g.nord_borders = false
--- vim.g.nord_disable_background = false 
--- vim.g.nord_italic = false
--- vim.g.nord_uniform_diff_background = false 
--- vim.g.nord_bold = true 
+-- GRUV BOX
+-- vim.o.background = "dark" 
+-- vim.cmd([[colorscheme gruvbox]])
+
+-- NORD
 -- vim.cmd[[colorscheme nord]]
-
--- require('nord').set()
-
--- vs bunk theme
--- vim.o.background = 'dark'
-
--- local c = require('vscode.colors').get_colors()
--- require('vscode').setup({
---     transparent = true,
---     italic_comments = true,
---     disable_nvimtree_bg = true,
---     color_overrides = {
---         vscLineNumber = '#FFFFFF',
---     },
-
---     group_overrides = {
---         -- this supports the same val table as vim.api.nvim_set_hl
---         -- use colors from this colorscheme by requiring vscode.colors!
---         Cursor = { fg=c.vscDarkBlue, bg=c.vscLightGreen, bold=true },
---     }
--- })
--- require('vscode').load()
---
--- vim.cmd.colorscheme "catppuccin"
