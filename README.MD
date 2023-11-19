@@ -3,6 +3,7 @@
 ## Prerequisites
 
 - Neovim 0.9 or higher
+- [packer](https://github.com/wbthomason/packer.nvim) package manager
 
 ## Installation
 
@@ -24,8 +25,7 @@ Here are the plugins included in the Neovim configuration:
 
 ## Themes
 
-- [Mofiqul/vscode.nvim](https://github.com/Mofiqul/vscode.nvim): VSCode-inspired theme for Neovim.
-- [Mofiqul/dracula.nvim](https://github.com/Mofiqul/dracula.nvim): Dracula theme for Neovim.
+- [Nightfox](https://github.com/EdenEast/nightfox.nvim) **CURRENT THEME**
 - [ellisonleao/gruvbox.nvim](https://github.com/ellisonleao/gruvbox.nvim): Gruvbox theme for Neovim.
 - [shaunsingh/nord.nvim](https://github.com/shaunsingh/nord.nvim): Nord theme for Neovim.
 
@@ -40,22 +40,25 @@ Here are the plugins included in the Neovim configuration:
 
 - [vim-test/vim-test](https://github.com/vim-test/vim-test): Test runner plugin for Neovim.
 
-## Java
-
-- [mfussenegger/nvim-jdtls](https://github.com/mfussenegger/nvim-jdtls): Java Language Server (JDTLS) integration for Neovim.
-
 ## File Searching and Navigation
 
 - [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim): Highly extensible file-finding and fuzzy searching plugin.
 - [nvim-tree/nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons): Icons for nvim-tree and other plugins.
 - [kyazdani42/nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua): File explorer for Neovim.
 
-## Code Analysis and Linting
+## Code Analysis, Linting, version control
 
 - [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter): Treesitter-powered text analysis and manipulation.
 - [mbbill/undotree](https://github.com/mbbill/undotree): Undo history visualizer.
 - [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive): Git integration for Neovim.
 - [tpope/vim-commentary](https://github.com/tpope/vim-commentary): Commenting plugin for Neovim.
+- [airblade/vim-gitgutter](https://github.com/airblade/vim-gitgutter): Git diff in the sign column.
+
+run below command after cloning, it is required for gitgutter
+
+```sh
+nvim -u NONE -c "helptags vim-gitgutter/doc" -c q
+```
 
 ## Autocompletion and Snippets
 
