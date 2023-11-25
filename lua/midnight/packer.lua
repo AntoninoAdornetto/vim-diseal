@@ -37,8 +37,11 @@ return require('packer').startup(function(use)
 	use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 	-- use('theprimeagen/harpoon')
 	use('mbbill/undotree')
-	use('tpope/vim-fugitive') -- git
 	use('tpope/vim-commentary') -- gcc comments
+
+	-- version control
+	use('tpope/vim-fugitive') -- git
+	use 'rhysd/git-messenger.vim'
 
 	use {
 		"windwp/nvim-autopairs",
